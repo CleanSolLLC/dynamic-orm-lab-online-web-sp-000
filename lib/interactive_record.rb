@@ -44,7 +44,6 @@ class InteractiveRecord
   
   def save
     DB[:conn].execute("INSERT INTO #{table_name_for_insert} (#{col_names_for_insert}) VALUES (#{values_for_insert})")
-    #binding.pry
     
     @id = DB[:conn].execute("SELECT last_insert_rowid() FROM #{table_name_for_insert}")[0][0]
   end
@@ -57,7 +56,6 @@ class InteractiveRecord
     attribute_key = attribute.keys.join
     attribute_value = attribute.values.join
     DB[:conn].execute("SELECT * FROM #{table_name} WHERE #{attribute_key} = ?", attribute_value)
-    #binding.pry
   end
 
 end
