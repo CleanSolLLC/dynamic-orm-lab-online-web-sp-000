@@ -57,7 +57,7 @@ class InteractiveRecord
     attribute_key = attribute.keys.join
     attribute_value = attribute.values.join
     DB[:conn].execute("SELECT * FROM #{table_name} WHERE #{attribut_key} = ?", attribute_value)
-    binding.pry
+    #binding.pry
   end
 
 end
