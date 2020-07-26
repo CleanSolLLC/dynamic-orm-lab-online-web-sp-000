@@ -55,7 +55,7 @@ class InteractiveRecord
   
   def self.find_by(attribute)
     DB[:conn].execute("SELECT * FROM #{table_name} WHERE attribute.keys.join = ?", attribute.values.join)
-    binding.pry
+    #binding.pry
   end
 
 end
